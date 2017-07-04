@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" href="css/imagehover.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Title-->
+    <title>Mogo Template</title>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <section style = "background: rgb(233, 130, 130); height:68px;">
+        <div class="navbar-fixed" style="z-index: 999;">
+            <nav>
+                <div id="nav" class="nav-wrapper">
+                    <a href="index.html" class="brand-logo left logo hide-on-med-and-down">{{ logo }}</a>
+                    <a href="index.html" class="brand-logo right logo hide-on-large-only" style="padding-right: 17px;">{{ logo }}</a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                       
+                        <li v-for='nav in navbar'><a v-bind:href='nav.url'>{{ nav.text }}</a></li>
+                        
+                        <li><a class="i" href=""><i class="material-icons">&#xE8CC;</i></a></li>
+                        
+                        <li><a class="i" href=""><i class="material-icons">search</i></a></li>
+                    </ul>
+                    <ul id="mobile-demo" class="right side-nav">
+                       
+                        <li v-for='nav in navbar'><a v-bind:href='nav.url'>{{ nav.text }}</a></li>
+                        
+                        <li><a class="i" href=""><i class="material-icons">&#xE8CC;</i></a></li>
+                        
+                        <li><a class="i" href=""><i class="material-icons">search</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <!-- End Header Section -->
+    
+    <!-- Who We Are Section -->
+    <section id="who-we-are" class="center scrollspy">
+        <div class="row">
+            <div class="col s12">
+                <h1 class="header">{{ header }}</h1>
+                <p class="sub-header">{{ subHeader }}</p>
+                <hr class="hr">
+                <p class="text col m10 offset-m1">{{ details }}</p>
+                <div v-for="fig in figure" class="animate">
+                    <figure class="col s12 m4" v-bind:class="fig.class">
+                        <img v-bind:src="fig.src" alt="">
+                        <figcaption>
+                            <div class="row">
+                                <div class="col s10 offset-s1 WWA-social">
+                                    <i v-for="icon in icons" v-bind:class="icon.class" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                        </figcaption>
+                    </figure>
+                    <div class="col s12 designers hide-on-med-and-up">
+                        <h1 class="service-header">{{ fig.header }}</h1>
+                        <p class="title">{{ fig.title }}</p>
+                    </div>
+                </div>
+                <div v-for="name in names" class="col m4 designers hide-on-small-only animate">
+                    <h1 class="service-header">{{ name.header }}</h1>
+                    <p class="title">{{ name.title }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Who We Are Section -->
+    
+    <!-- Map Section -->
+    <section id="map" class="center">
+        <div class="row">
+            <div class="col s12">
+                <i class="material-icons">place</i>
+                <h1>open map</h1>
+                <hr>
+            </div>
+        </div>
+    </section>
+    <!-- End Map Section -->
+    
+    <!-- Footer -->
+    <footer id="footer" class="left-align">
+        <div class="row" style="margin: 0;">
+            <div class="col s12" style="padding-bottom: 60px;">
+                <div class="col m5 s12">
+                    <h1 class="footer-logo">MoGo</h1>
+                    <p class="footer-mogo-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p class="followers"><span>15k</span> followers</p>
+                    <hr>
+                    <div class="footer-social">
+                        <span>Follow Us: </span>
+                        <a v-for="icon in icons" href="#"><i v-bind:class="icon.fa" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="email">
+                        <input class="col s8" type="email" placeholder="Your Email...">
+                        <button class="col s4 waves-effect waves-light" type="submit">subscripe</button>
+                    </div>
+                </div>
+                <div class="col m4 s12">
+                    <h1 class="footer-header">blogs</h1>
+                    <div v-for="img in blog" class="col s12 blog">
+                        <img v-bind:class="img.class" v-bind:style="img.style" v-bind:src="img.src" alt="">
+                        <div class="col m8 s8">
+                            <h1 class="footer-blog-header">{{ img.header }}</h1>
+                            <p class="footer-blog-date">{{ img.date }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col m3 s12">
+                    <h1 class="footer-header">instagram</h1>
+                    <div class="col s12" style="padding: 0;">
+                        <img v-for="img in instgram" v-bind:class="img.class" v-bind:src="img.src" alt="">
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-hr col s10 offset-s1">
+            <p class="col s12 center other-header" style="text-transform: none;">© 2016 MoGo free PSD template by <span style="color: #f38181; cursor: pointer;">Laaqiq</span></p>
+        </div>
+    </footer>
+    <!-- End Footer -->
+    
+    <!-- UP Button -->
+    <div style="display: none" class="fixed-action-btn">
+        <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">keyboard_arrow_up</i></a>
+    </div>
+    <!-- End UP Button -->
+    
+    <!--Import jQuery before materialize.js-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="js/responsiveslides.min.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script src="js/vue-codes.js"></script>
+    <script src="js/action.js"></script>
+</body>
+
+</html>
