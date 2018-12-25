@@ -871,9 +871,9 @@ header .learn {
     }
 }
 
-@media only screen and (min-width: 1024px) {
+@media (min-width: 1024px) {
     #who-we-are {
-        height: 840px;
+        height: 840px!important;
     }
 }
 
