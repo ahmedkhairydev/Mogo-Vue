@@ -831,7 +831,7 @@ header .learn {
 
 /* Media Queries */
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1440px) {
     header {
         background-size: cover;
     }
@@ -859,6 +859,9 @@ header .learn {
     }
     #our-stories .story .date span:last-child {
         font-size: 1.7vw
+    }
+    #who-we-are {
+        height: 1035px!important;
     }
     #footer {
         height: 535px;
