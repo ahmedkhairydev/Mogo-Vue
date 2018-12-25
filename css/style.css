@@ -871,6 +871,12 @@ header .learn {
     }
 }
 
+@media only screen and (min-width: 1024px) {
+    #who-we-are {
+        height: 840px;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     header .linear .welcome {
         font-size: 14vw;
